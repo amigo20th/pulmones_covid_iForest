@@ -16,7 +16,9 @@ Las observaciones hechas por un ojo experto, es decir, las áreas dañadas que f
 En el presente código solo se va a seccionar las imágenes por medio de _isolation forest_, por esa razón, y para facilitar las ejecuciones, se creo un script en bash.
 
 En nombre del script es **extract_if.sh**, en el cual son necesarios 2 parámetros: _i_ es el número de imagen a aplicar el algoritmo de _isolation forest_, el otro parámetro es _k_, el cual especifica el número de clases que se va a segmentar la imagen.
+
 Ejemplo de ejecución: 
+
 **extract_if.sh -i 1 -6**
 
 El anterior script estaría dando como resultado la segmentación en 6 clases de la imagen 1.
