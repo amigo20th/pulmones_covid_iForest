@@ -16,7 +16,8 @@ Las observaciones hechas por un ojo experto, es decir, las áreas dañadas que f
 En el presente código solo se va a seccionar las imágenes por medio de _isolation forest_, por esa razón, y para facilitar las ejecuciones, se creo un script en bash.
 
 En nombre del script es **extract_if.sh**, en el cual son necesarios 2 parámetros: _i_ es el número de imagen a aplicar el algoritmo de _isolation forest_, el otro parámetro es _k_, el cual especifica el número de clases que se va a segmentar la imagen.
-Ejemplo de ejecución: **extract_if.sh -i 1 -6**
+Ejemplo de ejecución: 
+**extract_if.sh -i 1 -6**
 
 El anterior script estaría dando como resultado la segmentación en 6 clases de la imagen 1.
 
@@ -30,8 +31,8 @@ El script tiene como parámetros de entrada: _i_, _m_ y _c_ que son las imágene
 Este script tiene como salidas las imágenes que se encuentran en la carpeta **new_images**. El nombre de dichas imagenes se puede estipular por los parámetros _o_ y _o2_. También cuenta como salida los archivos _.csv_ los cuales contienen la información de los pixeles de las imágenes de salida, los nombre de estas salidas se puede especificar con _r_, _rr_ y _s_.
 
 Ejemplo de ejecución para la imagen 1 y _k_=6:
-**python2 extract_atts_lung.py  -i Train/tr_im1.png  -m  LungMask/tr_lungmask1.png  -c Mask/tr_mask1.png  -r results/im_1_k_6.csv  -rr results/im_1_k_6_n.csv"  -s results/im_1_k_6_pix.csv  -o new_images/im_1.png  -o2 new_images/im_1_k_6.png -nk 6
-**
+
+**python2 extract_atts_lung.py  -i Train/tr_im1.png  -m  LungMask/tr_lungmask1.png  -c Mask/tr_mask1.png  -r results/im_1_k_6.csv  -rr results/im_1_k_6_n.csv"  -s results/im_1_k_6_pix.csv  -o new_images/im_1.png  -o2 new_images/im_1_k_6.png -nk 6**
 
 2- El segundo archivo en _Python_ para realizar toda la segmentación es **AnomDet_Lung.py**, este es el encargado de aplicar _isolation forest_ a los datos de salida del paso anterior.
 
@@ -40,6 +41,7 @@ Los parámetros de entrada son el archivo _.csv_ resultante del paso anterior, _
 El parámetro de salida será el archivo _.csv_ de cada pixel y qué clase de la segmentación se le asignó.
 
 Ejemplo e ejecución para la imagen 1 y _k_=6:
+
 **python2 AnomDet_Lung.py  -i results/im_1_k_6_n.csv -m if  -th 10  -o AD/im_1_k_6_n_if_th_10.csv**
 
 
