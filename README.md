@@ -19,7 +19,7 @@ En nombre del script es **extract_if.sh**, en el cual son necesarios 2 parámetr
 
 Ejemplo de ejecución: 
 
-**extract_if.sh -i 1 -6**
+**extract_if.sh -i 1 -k 6**
 
 El anterior script estaría dando como resultado la segmentación en 6 clases de la imagen 1.
 
